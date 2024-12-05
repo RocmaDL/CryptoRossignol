@@ -1,0 +1,65 @@
+GET /cbc.html HTTP/1.1
+Host: 10.0.0.1
+User-Agent: Wget/1.21.3
+Accept: */*
+Accept-Encoding: identity
+Connection: Keep-Alive
+
+HTTP/1.1 200 OK
+Date: Fri, 08 Nov 2024 11:29:31 GMT
+Server: Apache/2.4.62 (Debian)
+Last-Modified: Fri, 08 Nov 2024 11:28:05 GMT
+ETag: "876-626650b653b40"
+Accept-Ranges: bytes
+Content-Length: 2166
+Vary: Accept-Encoding
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html
+
+<html>
+
+<body>
+
+<h1>CBC</h1>
+
+<em>Extrait de  <a href="https://fr.wikipedia.org/wiki/Mode_d%27op%C3%A9ration_(cryptographie)#%C2%AB_Cipher_Block_Chaining_%C2%BB_(CBC):_encha%C3%AEnement_de_blocs">Wikip..dia</a> </em>
+
+<p>Ce mode consiste .. chiffrer le i-..me bloc pr..alablement combin.. par un OU exclusif (XOR) avec le chiffr.. du bloc pr..c..dent et d'un vecteur d'initialisation. Il s'agit d'un bloc de donn..es al..atoires qui permet de commencer le chiffrement du premier bloc et qui fournit ainsi une forme de hasard ind..pendant du document .. chiffrer. Il n'a pas besoin d'..tre lui-m..me chiffr.. lors de la transmission, mais il ne doit jamais ..tre r..employ.. avec la m..me cl...</p>
+
+<h2>D..fauts de CBC</h2>
+<p>   Un des points n..gatifs de CBC ..tant qu'il ne peut pas ..tre parall..lis.. ..tant donn.. que le bloc courant n..cessite que le pr..c..dent soit chiffr... Il est donc s..quentiel.
+   
+Selon l'impl..mentation qui est faite, le mode CBC peut ..tre vuln..rable .. la m..thode "Padding Oracle" qui permet de retrouver les blocs en clair. Le mode CBC ..tant un mode de chiffrement par bloc, il est n..cessaire d'ajouter du "padding" .. la fin de chaque bloc non rempli. Avec une compr..hension du fonctionnement du "padding" (PKCS7) et en utilisant les math..matiques modernes, il est possible de retrouver l'ensemble du message en clair. 
+</p>
+
+<figure>
+   <img src="./Schema_CBC.svg" alt="Sch..ma du fonctionnement de CBC">
+   <figcaption>Sch..ma du fonctionnement de CBC (source: <a href="https://commons.wikimedia.org/wiki/File:Schema_CBC.svg">wikimedia</a>/Bmoine/CC-BY-SA)</figcaption>
+</figure>
+
+<!-- <pre>
+                ___
+               /   \
+              |  o  |
+               \   /
+        ________) (________
+       |                   |
+       '------.     .------'
+               |   |
+               |   |
+               |   |
+               |   |
+    /\         |   |         /\
+   /_ \        /   \        / _\
+     \ '.    .'     '.    .' /
+      \  '--'         '--'  /
+       '.                 .'
+         '._           _.'
+            `'-.   .-'`
+                \ /
+                 `
+</pre> -->
+
+</body>
+</html>
